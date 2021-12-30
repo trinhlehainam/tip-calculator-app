@@ -12,9 +12,12 @@ module.exports = {
                 "light-grayish-cyan": "hsl(185, 41%, 84%)",
                 "lighter-grayish-cyan": "hsl(185, 41%, 97%)",
             },
+            backgroundImage: {
+                "dollar-pattern": "url('../../public/images/icon-dollar.svg')"
+            },
         },
         fontFamily: {
-            "spacemono": ["Mono"],
+            "monospace": ['Space Mono', 'monospace'],
         }
     },
     plugins: [],

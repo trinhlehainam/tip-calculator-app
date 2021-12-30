@@ -3,7 +3,7 @@ import { InputForm } from './components/inputform.component';
 
 function App() {
     return (
-        <main className="font-spacemono">
+        <main className="font-monospace">
             <div className="flex flex-col justify-center items-center min-h-screen bg-light-grayish-cyan">
                 <img src={`${process.env.PUBLIC_URL}/images/logo.svg`} alt="logo" />
                 <div className="flex flex-col lg:flex-row bg-white rounded-xl p-8 w-full lg:w-2/3">
@@ -20,8 +20,10 @@ function App() {
                                     / person
                                 </div>
                             </div>
-                            <div className="text-strong-cyan text-4xl font-bold my-auto">
-                                $4.20
+                            <div className="flex flex-row items-center">
+                                <div className="text-strong-cyan text-5xl font-bold my-auto">
+                                    $4.27
+                                </div>
                             </div>
                         </div>
                         <div className="w-full my-auto text-center bg-dark-grayish-cyan rounded content-end">
