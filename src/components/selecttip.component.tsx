@@ -13,11 +13,13 @@ export const SelectTip = () => {
         isCustomSelected, setSelectCustom,
     } = useContext(InputContext);
 
-    const getCustomTip = (event: ChangeEvent<HTMLInputElement>) => {
+    const getCustomTipFromInput = (event: ChangeEvent<HTMLInputElement>) => {
         const value = Number(event.target.value);
         setCustomTip && setCustomTip(value);
         setSelectedTip && setSelectedTip(value);
     }
+
+    const isUnselected = selectedItemIdx === -1 && !isCustomSelected;
 
     return (
         <>
@@ -36,7 +38,7 @@ export const SelectTip = () => {
                             )}
                             onClick={() => {
                                 setSelectCustom && setSelectCustom(false);
-                                setSelectedItemIdx && setSelectedItemIdx(idx)
+                                setSelectedItemIdx && setSelectedItemIdx(idx);
                                 setSelectedTip && setSelectedTip(value);
                             }}
                         >
@@ -50,12 +52,13 @@ export const SelectTip = () => {
                         "flex-[1_1_40%] lg:flex-[1_1_30%] mt-2 p-2 my-auto",
                     )}
                     placeholder="Custom"
-                    value={customTip === 0 ? "" : customTip?.toString()}
+                    value={isUnselected ? "" : customTip?.toString()}
                     onClick={() => {
                         setSelectCustom && setSelectCustom(true);
-                        setSelectedTip && customTip && setSelectedTip(customTip);
+                        // NOTE: need to absolute check on state value because 0 value CAN BE FALSE
+                        setSelectedTip && (customTip !== undefined) && setSelectedTip(customTip);
                     }}
-                    onChange={getCustomTip}
+                    onChange={getCustomTipFromInput}
                 />
             </div>
         </>

@@ -8,9 +8,9 @@ type Props = {
     selectedTip: number,
     setSelectedTip: Dispatch<SetStateAction<number>>,
     customTip: number,
+    setCustomTip: Dispatch<SetStateAction<number>>,
     isCustomSelected: boolean,
     setSelectCustom: Dispatch<SetStateAction<boolean>>,
-    setCustomTip: Dispatch<SetStateAction<number>>,
     peopleNum: number,
     setPeopleNum: Dispatch<SetStateAction<number>>,
 };
