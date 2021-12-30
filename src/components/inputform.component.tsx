@@ -1,4 +1,5 @@
 import { useState } from "react";
+import cx from 'classnames'
 
 export const InputForm = () => {
     const [value, setValue] = useState("");
@@ -6,35 +7,51 @@ export const InputForm = () => {
 
     return (
         <form>
-            <div>Bill</div>
+            <div className="text-dark-grayish-cyan font-bold mb-2">Bill</div>
             <div className="relative flex items-center">
                 <img
-                    className="absolute my-auto mx-2"
+                    className="absolute my-auto ml-3"
                     src={`${process.env.PUBLIC_URL}/images/icon-dollar.svg`} alt="dollar icon" />
                 <input
-                    className="px-2 rounded outline-none outline-offset-0 focus:outline-strong-cyan hover:outline-strong-cyan hover:cursor-pointer text-very-dark-cyan text-xl font-bold tracking-widest caret-strong-cyan text-right my-auto bg-gray-100 w-full"
+                    className={cx(
+                        "pr-3 py-1 rounded  hover:cursor-pointer caret-strong-cyan text-right my-auto bg-gray-100 w-full",
+                        "outline-none outline-offset-0 focus:outline-strong-cyan hover:outline-strong-cyan",
+                        "text-bold text-2xl text-very-dark-cyan font-bold"
+                    )}
                     type="number"
                     placeholder="0"
                 />
             </div>
-            <div>Select tip %</div>
-            <div className="flex flex-row flex-wrap gap-3 font-bold text-3xl">
+            <div className="text-dark-grayish-cyan font-bold mt-8">Select tip %</div>
+            <div className="flex flex-row flex-wrap gap-3 font-bold text-2xl">
                 {tips.map((value) => (
-                    <div className="mt-2 p-2 mx-auto my-auto flex-[1_1_40%] lg:flex-[1_1_30%] bg-very-dark-cyan text-lighter-grayish-cyan rounded text-center">{`${value}%`}</div>
+                    <div className="mt-2 p-2 mx-auto my-auto flex-[1_1_40%] lg:flex-[1_1_30%] bg-very-dark-cyan text-lighter-grayish-cyan rounded text-center">
+                    {`${value}%`}
+                    </div>
                 ))}
                 <input
-                    className="flex-[1_1_40%] lg:flex-[1_1_30%] px-2 mt-2 mx-auto my-auto w-full rounded hover:cursor-pointer text-very-dark-cyan font-bold tracking-widest caret-strong-cyan text-right bg-gray-100 focus:outline-strong-cyan"
+                    className={cx(
+                        "rounded hover:cursor-pointer caret-strong-cyan bg-lighter-grayish-cyan w-full",
+                        "outline-none outline-offset-0 focus:outline-strong-cyan hover:outline-strong-cyan",
+                        "text-bold text-very-dark-cyan placeholder-darker-grayish-cyan font-bold text-right",
+                        "flex-[1_1_40%] lg:flex-[1_1_30%] mt-2 p-2 my-auto"
+                    )}
                     type="number"
                     placeholder="Custom"
                 />
             </div>
-            <div>Number of People</div>
+            <div className="text-dark-grayish-cyan font-bold mt-8 mb-2">Number of People</div>
             <div className="relative flex items-center">
                 <img
-                    className="absolute my-auto mx-2"
+                    className="absolute my-auto ml-3"
                     src={`${process.env.PUBLIC_URL}/images/icon-person.svg`} alt="person icon" />
                 <input
-                    className="px-2 rounded hover:cursor-pointer text-very-dark-cyan text-xl font-bold tracking-widest caret-strong-cyan text-right my-auto bg-gray-100 focus:outline-strong-cyan w-full"
+                    className={cx(
+                        "pr-3 py-1 mb-2 rounded  hover:cursor-pointer caret-strong-cyan text-right my-auto bg-gray-100 w-full",
+                        "outline-none outline-offset-0 focus:outline-strong-cyan hover:outline-strong-cyan",
+                        "text-bold text-2xl text-very-dark-cyan font-bold",
+                        "flex-[1_1_40%] lg:flex-[1_1_30%]"
+                    )}
                     type="number"
                     placeholder="0"
                 />
