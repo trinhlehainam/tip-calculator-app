@@ -1,10 +1,21 @@
+import React from "react"
+import cx from 'classnames'
 
-export const NumberInput = () => {
+type Props = {
+    classname: string,
+    placeholder: string
+}
+
+export const NumberInput: React.FC<Props> = ({ classname, placeholder }) => {
     return (
         <input
-            className="rounded outline-none outline-offset-0 focus:outline-strong-cyan hover:outline-strong-cyan hover:cursor-pointer text-very-dark-cyan tracking-widest caret-strong-cyan text-right my-auto bg-gray-200"
+            className={cx(
+                classname,
+                "rounded hover:cursor-pointer caret-strong-cyan text-right my-auto bg-gray-100 w-full",
+                "outline-none outline-offset-0 focus:outline-strong-cyan hover:outline-strong-cyan",
+            )}
             type="number"
-            placeholder="0"
+            placeholder={placeholder}
         />
-    )
+    );
 }

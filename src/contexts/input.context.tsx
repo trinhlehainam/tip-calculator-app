@@ -7,8 +7,8 @@ type Props = {
     setSelectedItemIdx: Dispatch<SetStateAction<number>>,
     tips: number,
     setTips: Dispatch<SetStateAction<number>>,
-    people: number,
-    setPeople: Dispatch<SetStateAction<number>>,
+    peopleNum: number,
+    setPeopleNum: Dispatch<SetStateAction<number>>,
 };
 
 const InputContext = createContext<Partial<Props>>({});
