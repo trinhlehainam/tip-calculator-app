@@ -55,7 +55,7 @@ export const SelectTip = () => {
                     value={isUnselected ? "" : customTip?.toString()}
                     onClick={() => {
                         setSelectCustom && setSelectCustom(true);
-                        // NOTE: need to absolute check on state value because 0 value CAN BE FALSE
+                        // NOTE: need to absolute check on customTip (state's value) because 0 CAN be FALSE
                         setSelectedTip && (customTip !== undefined) && setSelectedTip(customTip);
                     }}
                     onChange={getCustomTipFromInput}
