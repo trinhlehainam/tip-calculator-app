@@ -1,20 +1,27 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { InputForm } from './components/inputform.component';
 import cx from 'classnames';
 import { InputContext } from './contexts/input.context';
 
 const App = () => {
     const [bill, setBill] = useState(0);
-    const [tips, setTips] = useState(0);
+    // Set index to -1 to unselect all
+    const [selectedItemIdx, setSelectedItemIdx] = useState(-1);
+    const [selectedTip, setSelectedTip] = useState(0);
+    const [customTip, setCustomTip] = useState(0);
+    const [isCustomSelected, setSelectCustom] = useState(false);
     const [peopleNum, setPeopleNum] = useState(0);
-    const [selectedItemIdx, setSelectedItemIdx] = useState(0);
 
     const inputContext = {
         bill, setBill,
         selectedItemIdx, setSelectedItemIdx,
-        tips, setTips,
+        selectedTip, setSelectedTip,
+        customTip, setCustomTip,
+        isCustomSelected, setSelectCustom,
         peopleNum, setPeopleNum
     };
+
+    const isResetable = bill !== 0 || selectedTip !== 0 || peopleNum !== 0;
 
     return (
         <main className="font-monospace">
@@ -37,14 +44,18 @@ const App = () => {
                                 </div>
                                 <div className="flex flex-row items-center">
                                     <div className="text-strong-cyan text-5xl my-auto">
-                                        $4.27
+                                        {(() => {
+                                            let result = bill * (selectedTip / 100);
+                                            result = peopleNum ? result / peopleNum : 0;
+                                            return `$${result.toFixed(2)}`;
+                                        })()}
                                     </div>
                                 </div>
                             </div>
                             <div className="flex flex-row justify-between font-bold mt-10">
                                 <div className="flex flex-col justify-center">
                                     <div className="text-light-grayish-cyan">
-                                        Tip Amount
+                                        Total
                                     </div>
                                     <div className="text-dark-grayish-cyan">
                                         / person
@@ -52,15 +63,32 @@ const App = () => {
                                 </div>
                                 <div className="flex flex-row items-center">
                                     <div className="text-strong-cyan text-5xl my-auto">
-                                        $4.27
+                                        {(() => {
+                                            let tip = bill * (selectedTip / 100);
+                                            let result = bill + tip;
+                                            result = peopleNum ? result / peopleNum : 0;
+                                            return `$${result.toFixed(2)}`;
+                                        })()}
                                     </div>
                                 </div>
                             </div>
-                            <div className={cx(
-                                "w-full mt-10 lg:mt-auto mb-8 py-2 rounded",
-                                "bg-strong-cyan",
-                                "text-center text-very-dark-cyan font-bold text-xl",
-                            )}>
+                            <div
+                                className={cx(
+                                    "w-full mt-10 lg:mt-auto mb-8 py-2 rounded",
+                                    "font-bold text-xl",
+                                    "bg-strong-cyan text-center text-very-dark-cyan",
+                                    { "opacity-100 cursor-pointer active:bg-light-grayish-cyan": isResetable },
+                                    { "opacity-20 cursor-default": !isResetable },
+                                )}
+                                onClick={() => {
+                                    setBill(0);
+                                    setSelectedTip(0);
+                                    setPeopleNum(0);
+                                    setSelectedItemIdx(-1);
+                                    setCustomTip(0);
+                                    setSelectCustom(false);
+                                }}
+                            >
                                 RESET
                             </div>
                         </div>
