@@ -43,7 +43,7 @@ const App = () => {
                                     </div>
                                 </div>
                                 <div className="flex flex-row items-center">
-                                    <div className="text-strong-cyan text-5xl my-auto">
+                                    <div className="text-strong-cyan text-3xl lg:text-5xl my-auto">
                                         {(() => {
                                             let result = bill * (selectedTip / 100);
                                             result = peopleNum ? result / peopleNum : 0;
@@ -62,7 +62,7 @@ const App = () => {
                                     </div>
                                 </div>
                                 <div className="flex flex-row items-center">
-                                    <div className="text-strong-cyan text-5xl my-auto">
+                                    <div className="text-strong-cyan text-3xl lg:text-5xl my-auto">
                                         {(() => {
                                             let tip = bill * (selectedTip / 100);
                                             let result = bill + tip;
