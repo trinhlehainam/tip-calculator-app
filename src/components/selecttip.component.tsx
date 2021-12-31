@@ -26,7 +26,7 @@ export const SelectTip = () => {
             <div className="text-dark-grayish-cyan font-bold mt-8">Select tip %</div>
             <div className="flex flex-row flex-wrap gap-3 font-bold text-2xl">
                 {SELECTABLE_TIPS.map((value, idx) => {
-                    const isSelected = selectedItemIdx == idx && !isCustomSelected;
+                    const isSelected = selectedItemIdx === idx && !isCustomSelected;
                     return (
                         <div
                             key={`${idx}-${value}`}
