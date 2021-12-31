@@ -12,6 +12,9 @@ module.exports = {
                 "light-grayish-cyan": "hsl(185, 41%, 84%)",
                 "lighter-grayish-cyan": "hsl(185, 41%, 97%)",
             },
+            fontSize: {
+                "3.5xl": ["2rem", "2.25rem"],
+            },
             backgroundImage: {
                 "dollar-pattern": "url('../../public/images/icon-dollar.svg')"
             },

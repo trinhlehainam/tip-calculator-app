@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://trinhlehainam.github.io/tipcalculatorchallenge/)
+- Live Site URL: [](https://trinhlehainam.github.io/tipcalculatorchallenge/)
 
 ## My process
 
@@ -75,12 +75,22 @@ setSelectedTip && customTip && setSelectedTip(customTip);
 setSelectedTip && (customTip !== undefined) && setSelectedTip(customTip);
 ```
 
+- I learned how to set root path for Create React App build project correct by setting homepage attribule in package.json to '.'
+
+```package.json
+{
+    ...
+    "homepage": ".",
+    ...
+}
+```
+
 ### Continued development
 
 ### Useful resources
 
-- [Zelda Inventory UI](https://dev.to/flagrede/how-to-replicate-the-zelda-botw-interface-with-react-tailwind-and-framer-motion-part-1-298g)
-- This help me how to use React Context and add custom color in tailwind.config.js file.
+- [Zelda Inventory UI](https://dev.to/flagrede/how-to-replicate-the-zelda-botw-interface-with-react-tailwind-and-framer-motion-part-1-298g) - This help me how to use React Context and add custom color in tailwind.config.js file.
+
 
 ## Author
 

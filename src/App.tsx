@@ -32,7 +32,13 @@ const App = () => {
                         <div className="lg:pr-12 lg:pl-4 lg:w-1/2">
                             <InputForm />
                         </div>
-                        <div className="flex flex-col justify-center bg-very-dark-cyan rounded-xl px-8 pt-12 mt-8 lg:mt-0 lg:w-1/2">
+                        <div
+                            className={cx(
+                                "flex flex-col justify-center bg-very-dark-cyan rounded-xl",
+                                "px-6 pt-8 mt-8",
+                                "lg:px-8 lg:pt-12 lg:mt-0 lg:w-1/2"
+                            )}
+                        >
                             <div className="flex flex-row justify-between font-bold">
                                 <div className="flex flex-col justify-center">
                                     <div className="text-light-grayish-cyan">
@@ -43,7 +49,7 @@ const App = () => {
                                     </div>
                                 </div>
                                 <div className="flex flex-row items-center">
-                                    <div className="text-strong-cyan text-3xl lg:text-5xl my-auto">
+                                    <div className="text-strong-cyan text-3.5xl lg:text-5xl my-auto">
                                         {(() => {
                                             let result = bill * (selectedTip / 100);
                                             result = peopleNum ? result / peopleNum : 0;
@@ -62,7 +68,7 @@ const App = () => {
                                     </div>
                                 </div>
                                 <div className="flex flex-row items-center">
-                                    <div className="text-strong-cyan text-3xl lg:text-5xl my-auto">
+                                    <div className="text-strong-cyan text-3.5xl lg:text-5xl my-auto">
                                         {(() => {
                                             let tip = bill * (selectedTip / 100);
                                             let result = bill + tip;
