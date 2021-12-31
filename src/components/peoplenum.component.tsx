@@ -17,7 +17,7 @@ export const PeopleNumber = () => {
 
     return (
         <>
-            <div className="flex flex-row justify-between font-bold mt-8 mb-2">
+            <div className="flex flex-row justify-between font-bold mt-8 mb-2 lg:mt-12">
                 <div className="text-dark-grayish-cyan">
                     Number of People
                 </div>

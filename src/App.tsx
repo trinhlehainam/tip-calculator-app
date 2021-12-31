@@ -28,7 +28,7 @@ const App = () => {
             <InputContext.Provider value={inputContext}>
                 <div className="relative flex flex-col items-center min-h-screen bg-light-grayish-cyan">
                     <img className="my-14 lg:my-20 lg:pt-20" src={`${process.env.PUBLIC_URL}/images/logo.svg`} alt="logo" />
-                    <div className="flex flex-col lg:flex-row bg-white rounded-3xl p-8 w-full lg:w-2/3">
+                    <div className="flex flex-col lg:flex-row bg-white rounded-3xl p-8 w-full lg:w-2/3 lg:shadow-dark-grayish-cyan lg:shadow-2xl">
                         <div className="lg:pr-12 lg:pl-4 lg:w-1/2">
                             <InputForm />
                         </div>
